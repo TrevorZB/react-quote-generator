@@ -3,8 +3,8 @@ import React from "react";
 const Instructions = props => {
   return (
     <div>
-      <p>Click the random button to generate a random quote.</p>
-      <p>Or, use the search bar to find quotes by a specific author!</p>
+      <p>Use the search bar to find quotes by a specific author!</p>
+      <p>Or, click the random button to generate a random quote.</p>
     </div>
   );
 };

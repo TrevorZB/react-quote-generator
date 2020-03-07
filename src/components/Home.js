@@ -15,8 +15,12 @@ const Home = props => {
           placeholder="Enter author..."
           className="form-control"
         ></input>
-        <br />
-        <button type="submit">Search!</button>
+        <button id="author-input-button" type="submit">
+          Search!
+        </button>
+        <button id="random-button" onClick={props.handleRandom}>
+          Random
+        </button>
       </form>
     </div>
   );

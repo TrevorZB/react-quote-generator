@@ -31,16 +31,17 @@ class App extends Component {
           input={this.state.input}
           handleInputSubmit={this.handleInputSubmit}
           handleHome={this.handleHome}
+          handleRandom={this.handleRandom}
         />
         {content}
-        {<button onClick={this.handleRandom}>Random</button>}
       </div>
     );
   }
   handleRandom = () => {
     const index = Math.floor(Math.random() * quotes.length);
     const submit = "";
-    this.setState({ index, submit });
+    const input = "";
+    this.setState({ index, input, submit });
   };
   handleInputChange = event => {
     const input = event.target.value;
