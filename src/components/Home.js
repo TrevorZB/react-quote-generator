@@ -23,10 +23,14 @@ const Home = props => {
           placeholder={"Enter " + props.select + "..."}
           className="form-control"
         ></input>
-        <button id="author-input-button" type="submit">
+        <button className="home-button" id="author-input-button" type="submit">
           Search
         </button>
-        <button id="random-button" onClick={props.handleRandom}>
+        <button
+          className="home-button"
+          id="random-button"
+          onClick={props.handleRandom}
+        >
           Random
         </button>
       </form>

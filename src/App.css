@@ -3,74 +3,78 @@ body {
   height: 100%;
 }
 
-#title {
-  text-decoration: none;
-  color: white;
-  font-family: "Verdana";
-  font-size: 50px;
-}
-
-#app {
-  background-color: #d4b39e;
-  margin: 5% 15% 5% 15%;
+#home {
   height: 100%;
   text-align: center;
-  padding: 5% 10px 5% 10px;
-  border-radius: 10px;
+  margin-top: 5%;
 }
 
-#author-input-button {
+#title {
+  text-decoration: none;
+  color: #95adb6;
+  font-family: "Verdana";
+  font-weight: bold;
+  font-size: 2.8vw;
+  transition: all 500ms;
+}
+
+#title:hover {
+  color: #8da1b9;
+}
+
+#quote {
+  background-color: #d4b39e;
+  margin-top: 1%;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+  margin-bottom: 5%;
+  height: 100%;
+  text-align: center;
+  padding: 5% 1% 5% 1%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.home-button {
   background-color: #95adb6;
   color: white;
-  height: 40px;
-  width: 90px;
-  padding: 10px;
-  font-size: 16px;
+  height: 1%;
+  width: 5%;
+  padding: 0.5%;
+  font-size: 0.9vw;
   font-weight: bold;
   border-radius: 5px;
-  margin-left: 5px;
+  border: none;
+  margin-left: 0.3%;
   transition: all 500ms;
 }
 
 #select {
   border-radius: 5px;
-  margin-right: 5px;
+  margin-right: 0.3%;
+  line-height: 25px;
   height: 25px;
 }
 
-#random-button {
-  background-color: #95adb6;
-  color: white;
-  height: 40px;
-  width: 90px;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: all 500ms;
-  margin-left: 5px;
-}
-
-#random-button:hover,
-#author-input-button:hover {
+.home-button:hover {
   background-color: #8da1b9;
 }
 
 p {
-  font-size: 20px;
+  font-size: 1.2vw;
   color: white;
   font-family: "Verdana";
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
 #author-input {
-  height: 30px;
-  width: 30%;
+  height: 34px;
+  width: 29%;
   border-radius: 5px;
   padding-left: 10px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
 }
 
 ::placeholder {
@@ -78,7 +82,35 @@ p {
 }
 
 .quote-line {
-  margin-top: 30px;
   border: 2px solid white;
   width: 20%;
+}
+
+#main-menu {
+  position: absolute;
+  background-color: white;
+  top: 11%;
+  right: 27.8%;
+  opacity: 1;
+  padding: 0.5%;
+  text-align: center;
+}
+
+.menu-bar {
+  width: 30px;
+  height: 5px;
+  background-color: #95adb6;
+  transition: all 500ms;
+}
+
+#menu-bar-2 {
+  margin-top: 5px;
+}
+
+#menu-bar-3 {
+  margin-top: 5px;
+}
+
+#main-menu:hover > .menu-bar {
+  background-color: #8da1b9;
 }

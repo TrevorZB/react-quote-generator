@@ -5,6 +5,7 @@ import Home from "./Home";
 import Instructions from "./Instructions";
 import QuoteList from "./QuoteList";
 import "../App.css";
+import Menu from "./Menu";
 
 class App extends Component {
   state = {
@@ -28,10 +29,12 @@ class App extends Component {
     } else if (this.state.index < 0) {
       content = <Instructions />;
     } else {
-      content = <Quote quote={this.state.quotes[this.state.index]} />;
+      content = (
+        <Quote separator={false} quote={this.state.quotes[this.state.index]} />
+      );
     }
     return (
-      <div id="app">
+      <div id="home">
         <Home
           handleInputChange={this.handleInputChange}
           input={this.state.input}
@@ -41,7 +44,8 @@ class App extends Component {
           handleSelectChange={this.handleSelectChange}
           select={this.state.select}
         />
-        {content}
+        <Menu />
+        <div id="quote">{content}</div>
       </div>
     );
   }
@@ -84,8 +88,9 @@ class App extends Component {
     );
   };
   mapToQuote = list => {
-    return list.map(l => {
-      return <Quote key={l.text} quote={l} />;
+    return list.map((l, index) => {
+      const separator = index === 0 ? false : true;
+      return <Quote key={index} separator={separator} quote={l} />;
     });
   };
 }

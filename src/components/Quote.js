@@ -5,7 +5,7 @@ import RenderAuthor from "./RenderAuthor";
 const Quote = props => {
   return (
     <div>
-      <hr className="quote-line" />
+      {props.separator && <hr className="quote-line" />}
       <RenderQuoteText text={props.quote.text} />
       <RenderAuthor author={props.quote.author} />
     </div>
