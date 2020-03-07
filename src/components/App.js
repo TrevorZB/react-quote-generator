@@ -11,12 +11,18 @@ class App extends Component {
     quotes: quotes,
     index: -1,
     input: "",
-    submit: ""
+    submit: "",
+    select: "Author"
   };
   render() {
     let content;
+    let quotes;
     if (this.state.submit) {
-      let quotes = this.queryQuotes();
+      if (this.state.select === "Author") {
+        quotes = this.authorQuery();
+      } else {
+        quotes = this.keywordQuery();
+      }
       quotes = this.mapToQuote(quotes);
       content = <QuoteList quotes={quotes} />;
     } else if (this.state.index < 0) {
@@ -32,6 +38,8 @@ class App extends Component {
           handleInputSubmit={this.handleInputSubmit}
           handleHome={this.handleHome}
           handleRandom={this.handleRandom}
+          handleSelectChange={this.handleSelectChange}
+          select={this.state.select}
         />
         {content}
       </div>
@@ -59,8 +67,21 @@ class App extends Component {
       submit: ""
     });
   };
-  queryQuotes = () => {
-    return this.state.quotes.filter(q => q.author === this.state.submit);
+  handleSelectChange = event => {
+    const select = event.target.value;
+    const input = "";
+    const submit = "";
+    this.setState({ input, submit, select });
+  };
+  authorQuery = () => {
+    return this.state.quotes.filter(q =>
+      q.author.toLowerCase().startsWith(this.state.submit.toLowerCase())
+    );
+  };
+  keywordQuery = () => {
+    return this.state.quotes.filter(q =>
+      q.text.toLowerCase().includes(this.state.submit.toLowerCase())
+    );
   };
   mapToQuote = list => {
     return list.map(l => {
