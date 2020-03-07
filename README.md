@@ -2,6 +2,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Generates random quotes.
 
-Search quotes by author name.
+Search quotes by author name/keywords
 
 Quotes pulled from: https://github.com/dwyl/quotes
