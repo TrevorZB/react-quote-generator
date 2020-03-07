@@ -19,7 +19,7 @@ body {
 }
 
 #title:hover {
-  color: #8da1b9;
+  color: #5e7999;
 }
 
 #quote {
@@ -53,11 +53,20 @@ body {
   border-radius: 5px;
   margin-right: 0.3%;
   line-height: 25px;
-  height: 25px;
+  height: 40px;
+  background-color: #95adb6;
+  color: white;
+  font-size: 0.9vw;
+  font-weight: bold;
+  transition: all 500ms;
+}
+
+#select:hover {
+  background-color: #5e7999;
 }
 
 .home-button:hover {
-  background-color: #8da1b9;
+  background-color: #5e7999;
 }
 
 p {
@@ -75,6 +84,7 @@ p {
   padding-left: 10px;
   margin-top: 1.5%;
   margin-bottom: 1.5%;
+  border: 2px solid #95adb6;
 }
 
 ::placeholder {
@@ -112,5 +122,5 @@ p {
 }
 
 #main-menu:hover > .menu-bar {
-  background-color: #8da1b9;
+  background-color: #5e7999;
 }
