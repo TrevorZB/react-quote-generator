@@ -76,6 +76,7 @@ p {
   font-family: "Verdana";
   margin-left: 2.5%;
   margin-right: 2.5%;
+  text-align: center;
 }
 
 #author-input {
@@ -116,4 +117,10 @@ p {
 #menu-favorites-button {
   top: 18.5%;
   right: 24.85%;
+}
+
+#quote-favorite-button {
+  background-color: #d4b39e;
+  border: none;
+  color: white;
 }

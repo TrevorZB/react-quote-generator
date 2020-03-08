@@ -14,7 +14,8 @@ class App extends Component {
     input: "",
     submit: "",
     select: "Author",
-    menuReveal: false
+    menuReveal: false,
+    favoriteQuotes: []
   };
   render() {
     let content;
@@ -31,7 +32,11 @@ class App extends Component {
       content = <Instructions />;
     } else {
       content = (
-        <Quote separator={false} quote={this.state.quotes[this.state.index]} />
+        <Quote
+          separator={false}
+          index={this.state.index}
+          quote={this.state.quotes[this.state.index]}
+        />
       );
     }
     return (
@@ -104,6 +109,7 @@ class App extends Component {
     const menuReveal = !this.state.menuReveal;
     this.setState({ menuReveal });
   };
+  isFavorited = text => {};
 }
 
 export default App;
