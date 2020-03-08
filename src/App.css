@@ -97,10 +97,23 @@ p {
   width: 20%;
 }
 
-#menu-button {
+.menu-button {
   width: 2.5%;
   height: 4.2%;
   position: absolute;
-  top: 11%;
-  right: 27.5%;
+}
+
+#main-menu-button {
+  top: 13.9%;
+  right: 27.65%;
+}
+
+#menu-home-button {
+  top: 13.9%;
+  right: 24.85%;
+}
+
+#menu-favorites-button {
+  top: 18.5%;
+  right: 24.85%;
 }

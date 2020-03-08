@@ -48,6 +48,7 @@ class App extends Component {
         <Menu
           menuReveal={this.state.menuReveal}
           handleMenuClick={this.handleMenuClick}
+          handleHome={this.handleHome}
         />
         <div id="quote">{content}</div>
       </div>
@@ -72,7 +73,9 @@ class App extends Component {
     this.setState({
       index: -1,
       input: "",
-      submit: ""
+      submit: "",
+      select: "Author",
+      menuReveal: false
     });
   };
   handleSelectChange = event => {
