@@ -24,14 +24,14 @@ const Home = props => {
           className="form-control"
         ></input>
         <button className="home-button" id="author-input-button" type="submit">
-          Search
+          <i class="fas fa-search"></i>
         </button>
         <button
           className="home-button"
           id="random-button"
           onClick={props.handleRandom}
         >
-          Random
+          <i class="fas fa-dice"></i>
         </button>
       </form>
     </div>

@@ -1,11 +1,15 @@
 import React from "react";
 
-const Menu = () => {
+const Menu = props => {
   return (
-    <div id="main-menu">
-      <div id="menu-bar-1" className="menu-bar"></div>
-      <div id="menu-bar-2" className="menu-bar"></div>
-      <div id="menu-bar-3" className="menu-bar"></div>
+    <div>
+      <button
+        onClick={props.handleMenuClick}
+        className="home-button"
+        id="menu-button"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   );
 };

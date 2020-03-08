@@ -3,8 +3,12 @@ import React from "react";
 const Instructions = props => {
   return (
     <div>
-      <p>Use the search bar to find quotes.</p>
-      <p>Use the random button to generate a random quote.</p>
+      <p>
+        Use <i class="fas fa-search"></i> to find quotes.
+      </p>
+      <p>
+        Use <i class="fas fa-dice"></i> to generate a random quote.
+      </p>
     </div>
   );
 };

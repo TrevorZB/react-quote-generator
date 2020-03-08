@@ -13,7 +13,8 @@ class App extends Component {
     index: -1,
     input: "",
     submit: "",
-    select: "Author"
+    select: "Author",
+    menuReveal: false
   };
   render() {
     let content;
@@ -44,7 +45,10 @@ class App extends Component {
           handleSelectChange={this.handleSelectChange}
           select={this.state.select}
         />
-        <Menu />
+        <Menu
+          menuReveal={this.state.menuReveal}
+          handleMenuClick={this.handleMenuClick}
+        />
         <div id="quote">{content}</div>
       </div>
     );
@@ -92,6 +96,10 @@ class App extends Component {
       const separator = index === 0 ? false : true;
       return <Quote key={index} separator={separator} quote={l} />;
     });
+  };
+  handleMenuClick = () => {
+    const menuReveal = !this.state.menuReveal;
+    this.setState({ menuReveal });
   };
 }
 
