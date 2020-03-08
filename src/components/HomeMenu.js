@@ -8,7 +8,7 @@ const HomeMenu = props => {
         id="menu-home-button"
         className="home-button menu-button"
       >
-        <i class="fas fa-home"></i>
+        <i className="fas fa-home"></i>
       </button>
     </div>
   );

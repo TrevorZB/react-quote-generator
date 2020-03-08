@@ -31,11 +31,15 @@ class App extends Component {
     } else if (this.state.index < 0) {
       content = <Instructions />;
     } else {
+      const quote = this.state.quotes[this.state.index];
+      const favorited = this.isFavorited(quote);
       content = (
         <Quote
           separator={false}
           index={this.state.index}
-          quote={this.state.quotes[this.state.index]}
+          quote={quote}
+          favorited={favorited}
+          handleFavoriteClick={this.handleFavoriteClick}
         />
       );
     }
@@ -100,16 +104,37 @@ class App extends Component {
     );
   };
   mapToQuote = list => {
-    return list.map((l, index) => {
+    return list.map((q, index) => {
       const separator = index === 0 ? false : true;
-      return <Quote key={index} separator={separator} quote={l} />;
+      const favorited = this.isFavorited(q);
+      return (
+        <Quote
+          key={index}
+          separator={separator}
+          quote={q}
+          favorited={favorited}
+          handleFavoriteClick={this.handleFavoriteClick}
+        />
+      );
     });
   };
   handleMenuClick = () => {
     const menuReveal = !this.state.menuReveal;
     this.setState({ menuReveal });
   };
-  isFavorited = text => {};
+  isFavorited = quote => {
+    const found = this.state.favoriteQuotes.filter(q => q.id === quote.id);
+    return found.length > 0;
+  };
+  handleFavoriteClick = quote => {
+    const favoriteQuotes = this.state.favoriteQuotes;
+    if (this.isFavorited(quote)) {
+      favoriteQuotes.splice(favoriteQuotes.indexOf(quote), 1);
+    } else {
+      favoriteQuotes.push(quote);
+    }
+    this.setState({ favoriteQuotes });
+  };
 }
 
 export default App;

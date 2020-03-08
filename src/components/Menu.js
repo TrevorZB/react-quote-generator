@@ -10,7 +10,7 @@ const Menu = props => {
         className="home-button menu-button"
         id="main-menu-button"
       >
-        <i class="fas fa-bars"></i>
+        <i className="fas fa-bars"></i>
       </button>
       {props.menuReveal && (
         <React.Fragment>

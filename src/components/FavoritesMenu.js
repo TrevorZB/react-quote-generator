@@ -8,7 +8,7 @@ const FavoritesMenu = props => {
         id="menu-favorites-button"
         className="home-button menu-button"
       >
-        <i class="far fa-heart"></i>
+        <i className="far fa-heart"></i>
       </button>
     </div>
   );
