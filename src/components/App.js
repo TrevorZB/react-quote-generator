@@ -15,7 +15,8 @@ class App extends Component {
     submit: "",
     select: "Author",
     menuReveal: false,
-    favoriteQuotes: []
+    favoriteQuotes: [],
+    displayFavorites: false
   };
   render() {
     let content;
@@ -27,6 +28,9 @@ class App extends Component {
         quotes = this.keywordQuery();
       }
       quotes = this.mapToQuote(quotes);
+      content = <QuoteList quotes={quotes} />;
+    } else if (this.state.displayFavorites) {
+      quotes = this.mapToQuote(this.state.favoriteQuotes);
       content = <QuoteList quotes={quotes} />;
     } else if (this.state.index < 0) {
       content = <Instructions />;
@@ -58,6 +62,7 @@ class App extends Component {
           menuReveal={this.state.menuReveal}
           handleMenuClick={this.handleMenuClick}
           handleHome={this.handleHome}
+          handleFavorites={this.handleFavorites}
         />
         <div id="quote">{content}</div>
       </div>
@@ -84,7 +89,8 @@ class App extends Component {
       input: "",
       submit: "",
       select: "Author",
-      menuReveal: false
+      menuReveal: false,
+      displayFavorites: false
     });
   };
   handleSelectChange = event => {
@@ -134,6 +140,14 @@ class App extends Component {
       favoriteQuotes.push(quote);
     }
     this.setState({ favoriteQuotes });
+  };
+  handleFavorites = () => {
+    this.setState({
+      input: "",
+      submit: "",
+      displayFavorites: true,
+      menuReveal: false
+    });
   };
 }
 

@@ -14,7 +14,8 @@ const Menu = props => {
       </button>
       {props.menuReveal && (
         <React.Fragment>
-          <HomeMenu handleHome={props.handleHome} /> <FavoritesMenu />
+          <HomeMenu handleHome={props.handleHome} />{" "}
+          <FavoritesMenu handleFavorites={props.handleFavorites} />
         </React.Fragment>
       )}
     </div>
