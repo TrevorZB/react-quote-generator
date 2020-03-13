@@ -49,7 +49,6 @@ class App extends Component {
     }
     return (
       <div id="home">
-        <h1>HEREHELLO</h1>
         <Home
           handleInputChange={this.handleInputChange}
           input={this.state.input}
