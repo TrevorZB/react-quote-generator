@@ -72,7 +72,9 @@ class App extends Component {
     const index = Math.floor(Math.random() * quotes.length);
     const submit = "";
     const input = "";
-    this.setState({ index, input, submit });
+    const menuReveal = false;
+    const displayFavorites = false;
+    this.setState({ index, input, submit, menuReveal, displayFavorites });
   };
   handleInputChange = event => {
     const input = event.target.value;
@@ -81,7 +83,8 @@ class App extends Component {
   handleInputSubmit = event => {
     event.preventDefault();
     const submit = this.state.input;
-    this.setState({ submit });
+    const menuReveal = false;
+    this.setState({ submit, menuReveal });
   };
   handleHome = () => {
     this.setState({
